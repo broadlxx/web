@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="mill.css" rel="stylesheet" type="text/css" />
+        <link href="oform.css" rel="stylesheet" type="text/css" />
+        
+        <script src="modernizr-1.5.js"></script>
+        <script src="formsubmit.js"></script>
+	</head>
+	
+	<body>
+	<header>
+		<img src="mclogo.jpg" alt="KPAF" />
+		
+		<nav>
+			<ul>
+				<li class="l1"><a href="#">Home</a></li>
+				<li><a href="#">Desktops</a></li>
+				<li><a href="#">Laptops</a>></li>
+				<li><a href="#">Peripherals</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Your Account</a></li>
+				<li><a href="#">Shopping Cart</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>		
+		</nav>
+	</header>
+	
+	<article>
+        <h1>Build Your Computer</h1>
+        <p>*-required information
+        </p>
+    </article>
+   
+    <section>
+        <form action=" http://www.mill_computers.com/orders/process.cgi"
+            method="post">
+        	<fieldset id="information">
+        		<legend>Contact information</legend>
+        		
+        		<label for="firstname">First Name*</label>
+        		<input name="firstname" id="firstname"
+                   placeholder="first name"
+                   required="required" />
+        		
+        		<label for="lastname">Last Name *</label>
+				<input name="lastname" id="lastname"
+                   placeholder="last name"
+                   required="required" />
+                  
+                <label for="street">Street* address</label>
+	            <input name="street" id="street" />
+	
+	            <label for="city">City*</label>
+	            <input name="city" id="city" value="Ormond Beach" />
+        		
+        		<label for="state">State*</label>
+	            <input name="state" id="state" value="" />
+	
+	            <label for="zip">ZIP*</label>
+	            <input name="zip" id="zip"
+                   placeholder=""
+                   pattern="^\d{5}(\-\d{4})?$" />
+                
+                <label for="phone">Phone*</label>
+            	<input name="phone" id="phone" type="tel"
+                   placeholder="nnnn-(nnnn)"
+                   pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />                  
+        	</fieldset>
+        	
+        	<fieldset id="configuration">
+        		<legend>Computer Configuration</legend>
+        	
+        		<label for="processorspeed">Processor Speed</label>
+            	<select name="processorspeed" id="processorspeed">
+	                <option value="type1" selected="selected">2.4 GHs</option>
+	                <option value="type2">2.8 GHs</option>
+	                <option value="type3">3.2 GHs</option>
+            	</select>
+            	
+            	<label for="memory">Memory</label>
+            	<select name="memory" id="memory">
+	                <option value="type1" selected="selected">1 GB</option>
+	                <option value="type2">2 GB</option>
+	                <option value="type3">4 GB</option>
+	                <option value="type4">8 GB</option>
+	                <option value="type5">16 GB</option>
+	                <option value="type5">32 GB</option>
+            	</select>
+            	
+            	<label for="monitorsize">Monitor Size</label>
+            	<select name="monitorsize" id="monitorsize">
+	                <option value="type1" selected="selected">15"</option>
+	                <option value="type2">18"</option>
+            	</select>
+            	
+            	<label for="harddrive">Hard Drive</label>
+            	<select name="harddrive" id="harddrive">
+	                <option value="type1" selected="selected">240 GB</option>
+	                <option value="type2">500 GB</option>
+	                <option value="type3">1000 GB</option>
+            	</select>
+            	
+            	<label>DVD Burner</label>
+            	<fieldset class="option">
+	                <label for= "dYes">Yes</label>
+	                <input type="radio" name="dvdburner" id="dYes"
+	                      value="yes" />
+	 
+	                <label for= "dNo">No</label>
+	                <input type="radio" name="dvdburner" id="dNo"
+	                      value="no" />
+            	</fieldset>
+            	
+            	<label>LAN Card</label>
+            	<fieldset class="option">
+	                <label for= "lYes">Yes</label>
+	                <input type="radio" name="lancard" id="lYes"
+	                      value="yes" />
+	 
+	                <label for= "lNo">No</label>
+	                <input type="radio" name="lancard" id="lNo"
+	                      value="no" />
+            	</fieldset>
+            	
+            	<label>Media Card Reader</label>
+            	<fieldset class="option">
+	                <label for= "mYes">Yes</label>
+	                <input type="radio" name="mediacardreader" id="mYes"
+	                      value="yes" />
+	 
+	                <label for= "mNo">No</label>
+	                <input type="radio" name="mediacardreader" id="mNo"
+	                      value="no" />
+            	</fieldset>            	
+        	</fieldset>
+        	
+	        <label id="blank">
+            <input type="checkbox" name="newscb" />
+            Yes,I want the 24-month extended warranty
+            </label>
+            
+            <label for= "comments ">Any special request on your order?</label>
+            <textarea name="comments" id="comments"></textarea>  
+            
+            <p>
+            <input type="submit" value="Send Order" />
+            <input type="reset" value="Cancel Order" />
+            <input type="reset" value="Contact Me" />
+            </p>
+        </form>  
+    </section>
+	
+	
+	<footer>
+      <address>
+         Millenniurn Computer &bull;
+         20 Sheffield Street &bull;
+         Terrace End,Palmerston North,NZ &bull;
+         (06) 555 - 8441 
+      </address>
+   </footer>
+	</body>
+</html>

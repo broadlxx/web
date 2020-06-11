@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Geolocation and Web Storage</title>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=abcd&v=1.4&services=true"></script>
+	<script type="text/javascript" src="Lab_9_Geolocation_Tutorial.js"></script>
+	<style type="text/css">
+    #second{width:600px;height:600px;border:4px solid rgba(0,0,0,.3)}
+    </style>
+	<!-- Link your JavaScript file. -->
+	<!-- <script>
+    geolocationSupport();
+	</script> -->
+</head>
+<body>
+    <script>window.onload=geolocationSupport()</script>
+	<script>window.onload=getCurrentPosition()</script>
+	<button onclick="getCurrentPosition()">location data</button>
+	<div id="first"></div>
+	<button onclick="getaccuracyPosition()">accuracy data</button>
+	<div id="acc"></div>
+	<div id="second"></div>
+	<!-- Place a div element here for diplaying location information. Don't forget to
+	give it an id attribute so you can access it in the DOM. -->
+	
+	<!-- Place a second div element here for diplaying accuracy information. Don't forget to
+	give it an id attribute so you can access it in the DOM. -->
+</body>
+</html>

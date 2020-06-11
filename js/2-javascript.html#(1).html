@@ -1,0 +1,650 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<!-- 2017-09-17 Sun 23:52 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>‎ (1)</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Giovanni Moretti">
+<!-- configuration parameters --> <meta name="font-size-adjustment" content="4"> <!-- style sheet links --> <link rel="stylesheet" href="2-javascript.html%23(1)_files/slidy.css" type="text/css"><link rel="stylesheet" href="2-javascript.html%23(1)_files/slidyGM.css" type="text/css"> <!-- HTMTLSLIDY JS -->  <script src="2-javascript.html%23(1)_files/slidy.js" type="text/javascript"> </script> <script src="2-javascript.html%23(1)_files/jquery.js" type="text/javascript"> </script> <script src="2-javascript.html%23(1)_files/org-slidy-slides.js" type="text/javascript"></script>
+</head>
+<body style="visibility: visible; font-size: 24pt;" class=""><div class=" slidy_toc hidden"><div class=" toc-heading">Table of Contents</div>1. <a href="#(1)">‎(1)</a><br>2. <a href="#(2)">A good (free) book on HTML5 &amp; Javascript</a><br>3. <a href="#(3)">IMPORTANT - remember to use 'var' for local variables</a><br>4. <a href="#(4)">The Document &amp; Browser Object Models</a><br>5. <a href="#(5)">Dynamically building the page</a><br>6. <a href="#(6)">Dynamic page building - example</a><br>7. <a href="#(7)">Finding page elements</a><br>8. <a href="#(8)">Finding an altering all paragraphs - by 'p' tag</a><br>9. <a href="#(9)">Logging - console.log()</a><br>10. <a href="#(10)">Creating New Windows</a><br>11. <a href="#(11)">Using the colour selector</a><br>12. <a href="#(12)">Javascript Objects</a><br>13. <a href="#(13)">Creating object by Constructor</a><br>14. <a href="#(14)">A simpler object constructor</a><br>15. <a href="#(15)">Javascript Exception Handling #1</a><br>16. <a href="#(16)">Javascript Exceptions - finally &amp; throw</a><br>17. <a href="#(17)">Converting Numbers - parseInt() &amp; parseFloat()</a><br>18. <a href="#(18)">parseInt() &amp; parseFloat example</a></div>
+<div id="content">
+<style>pre{background-color:#FFD} </style>
+<style>button,input{font-size:100%; background-color:#FEE; margin:10px;} </style>
+
+<div id="outline-container-org518eb02" class="outline-2 slide first-slide">
+<h1><span></span></h1>
+<div class="outline-text-2" id="text-org518eb02">
+<div class="titlepage">
+<p>
+158.258 - Part 2 - Javascript &amp; the DOM
+</p>
+
+<div class="smaller">
+<p>
+Dr Giovanni Moretti
+</p>
+
+</div>
+
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org12a24d3" class="outline-2 slide hidden">
+<h1><span>A good (free) book on HTML5 &amp; Javascript</span></h1>
+<div class="outline-text-2" id="text-org12a24d3">
+<dl class="org-dl">
+<dt>Dive into HTML5</dt><dd><a href="http://diveintohtml5.info/index.html" rel="external">http://diveintohtml5.info/index.html</a></dd>
+</dl>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgfe5fbd7" class="outline-2 slide hidden">
+<h1><span>IMPORTANT - remember to use 'var' for local variables</span></h1>
+<div class="outline-text-2" id="text-orgfe5fbd7">
+</div>
+<div id="outline-container-orgdf88b73" class="outline-3 incremental">
+<h3 id="orgdf88b73">Coming from Python, it's easy to forget the variables in JavaScript function will be GLOBAL unless prefixed with 'var'</h3>
+</div>
+
+<div id="outline-container-org9c862ac" class="outline-3 incremental">
+<h3 id="org9c862ac">I may forget. This isn't intentional …</h3>
+</div>
+
+<div id="outline-container-org3ec4d68" class="outline-3 incremental">
+<h3 id="org3ec4d68">Remember to always put 'var' to get local variables</h3>
+</div>
+<br><br></div>
+
+<div id="outline-container-org447f19a" class="outline-2 slide hidden">
+<h1><span>The Document &amp; Browser Object Models</span></h1>
+<div class="outline-text-2" id="text-org447f19a">
+</div>
+<div id="outline-container-org62e6db8" class="outline-4">
+<h4 id="org62e6db8">The Window object</h4>
+<div class="outline-text-4" id="text-org62e6db8">
+<ul class="org-ul">
+<li>window. is optional - all non-qualified variables/methods will be treated as belonging to the <b>.window</b> object
+so<br>
+<b>window.document.getElementById('button1')</b>  can be shortened to <b>document.getElementById('button1')</b></li>
+</ul>
+<ul class="org-ul">
+<li><b>Properties:</b> Window dimensions: .innerwidth, .innerHeight</li>
+<li><b>Methods:</b>
+<ul class="org-ul">
+<li>window.open()</li>
+<li>window.close()</li>
+<li>window.resizeTo(width, height)</li>
+<li>window.moveTo(topLeftX, topLeftY)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org0fa118e" class="outline-2 slide hidden">
+<h1><span>Dynamically building the page</span></h1>
+<div class="outline-text-2" id="text-org0fa118e">
+<p>
+<b>Add</b> elements to the page (document)
+</p>
+<ul class="org-ul">
+<li>use <b>document.createElement()</b></li>
+</ul>
+
+<p>
+then 
+</p>
+<ul class="org-ul">
+<li>add if AFTER  an element - use <b>element.appendChild()</b>, OR</li>
+<li>add it BEFORE an element - use <b>element.insertBefore()</b></li>
+</ul>
+
+<p>
+Can also remove elements.
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org41e12e0" class="outline-2 slide hidden">
+<h1><span>Dynamic page building - example</span></h1>
+<div class="outline-text-2" id="text-org41e12e0">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;p id=<span style="color: #8b2252;">'target'</span>&gt; &lt;b&gt;Target&lt;/b&gt; &lt;/p&gt;
+
+&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">addAfter</span>() {
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">newP</span> = document.createElement(<span style="color: #8b2252;">'p'</span>)         <span style="color: #b22222;">// </span><span style="color: #b22222;">Make an empty paragraph</span>
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">pText</span>= document.createTextNode(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>()) <span style="color: #b22222;">// </span><span style="color: #b22222;">Make some text</span>
+  newP.appendChild(pText)                        <span style="color: #b22222;">// </span><span style="color: #b22222;">Add text to paragraph</span>
+
+  document.getElementById(<span style="color: #8b2252;">'target'</span>).appendChild(newP)
+}
+&lt;/script&gt;
+&lt;button onclick=<span style="color: #8b2252;">'addAfter()'</span>&gt;Add After Target&lt;/button&gt;
+</code></pre>
+</div>
+
+<p id="target"> <b>Target</b> </p>
+
+<script>
+function addAfter() {
+  newP = document.createElement('p')         // Make an empty paragraph
+  pText= document.createTextNode(new Date()) // Make some text
+  newP.appendChild(pText)                    // Add text to paragraph
+
+  target = document.getElementById('target')
+  target.appendChild(newP)
+}
+</script>
+<button onclick="addAfter()">Try: Add After Target</button>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgb8f3f3a" class="outline-2 slide hidden">
+<h1><span>Finding page elements</span></h1>
+<div class="outline-text-2" id="text-orgb8f3f3a">
+<p>
+The DOM has a NodeList object - used to return collection of elements
+</p>
+</div>
+
+<div id="outline-container-org1e43b9e" class="outline-3 incremental">
+<h3 id="org1e43b9e">by Tag</h3>
+<div class="outline-text-3" id="text-org1e43b9e">
+<ul class="org-ul">
+<li>e.g. <b>document.getElementsByTagName('p')</b></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3241c57" class="outline-3 incremental">
+<h3 id="org3241c57">by Class:</h3>
+<div class="outline-text-3" id="text-org3241c57">
+<ul class="org-ul">
+<li>using <b>document.getElementsByClassName()</b> 
+<ul class="org-ul">
+<li>e.g. document.getElementsByClassName('myDiv')</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org14a90df" class="outline-3 incremental">
+<h3 id="org14a90df">or individually</h3>
+<div class="outline-text-3" id="text-org14a90df">
+<ul class="org-ul">
+<li><b>document.getElementById()</b></li>
+</ul>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgd2beb00" class="outline-2 slide hidden">
+<h1><span>Finding an altering all paragraphs - by 'p' tag</span></h1>
+<div class="outline-text-2" id="text-orgd2beb00">
+<p>
+Here's a paragraph - just a &lt;p&gt; tag
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">redParagraphs</span>(){
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">paragraphs</span> = document.getElementsByTagName(<span style="color: #8b2252;">'p'</span>)
+  alert(<span style="color: #8b2252;">'No of paragraphs = '</span> + paragraphs.length)
+  <span style="color: #a020f0;">for</span> (i=0; i&lt; paragraphs.length; i++){
+     thisPara = paragraphs[i].style.color = <span style="color: #8b2252;">'#FF0000'</span>
+  }
+}
+&lt;/script&gt;
+&lt;button onclick=<span style="color: #8b2252;">'redParagraphs()'</span>&gt; Make all paragraphs RED&lt;/button&gt;
+</code></pre>
+</div>
+
+<script>
+function redParagraphs(){
+  var paragraphs = document.getElementsByTagName('p')
+  alert('No of paragraphs = ' + paragraphs.length)
+  for (i=0; i< paragraphs.length; i++){
+     thisPara = paragraphs[i].style.color = '#FF0000'
+  }
+}
+</script>
+<button onclick="redParagraphs()"> Make all paragraphs RED</button>
+</div>
+<br><br></div>
+
+<div id="outline-container-org8d35fb5" class="outline-2 slide hidden">
+<h1><span>Logging - console.log()</span></h1>
+<div class="outline-text-2" id="text-org8d35fb5">
+<p>
+use <b>console.log()</b> to output logging info without using alert() boxes or making text part of the page
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-html">&lt;<span style="color: #0000ff;">button</span> <span style="color: #a0522d;">onclick</span>=<span style="color: #8b2252;">"outputToLog()"</span>&gt;Output a Log line&lt;/<span style="color: #0000ff;">button</span>&gt;
+&lt;<span style="color: #0000ff;">script</span>&gt;
+function outputToLog(){
+  var timestamp = new Date()
+  console.log(<span style="color: #8b2252;">"Gidday, it's "</span> + timestamp)
+}
+&lt;/<span style="color: #0000ff;">script</span>&gt;
+</code></pre>
+</div>
+
+<p>
+<b>To see the console, in Chrome:</b>
+</p>
+<ul class="org-ul">
+<li><i>right-click</i> the button &amp; choose 'Inspect'</li>
+<li>select the 'Console' tab &amp; <b>Logging</b> sub-tab</li>
+<li>click the button several times</li>
+</ul>
+<button onclick="outputToLog()" style="font-size:100%">Output a Log line</button>
+<script>
+function outputToLog(){
+  var timestamp = new Date()
+  console.log("Gidday, it's " + timestamp)
+}
+</script>
+</div>
+<br><br></div>
+
+<div id="outline-container-org09e1b72" class="outline-2 slide hidden">
+<h1><span>Creating New Windows</span></h1>
+<div class="outline-text-2" id="text-org09e1b72">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;h3&gt;New Window Demo&lt;/h3&gt;
+Width &lt;input type=number id=<span style="color: #8b2252;">'newX'</span>  min=320 max=1024 value=900&gt;&lt;br /&gt;
+Height &lt;input type=number id=<span style="color: #8b2252;">'newY'</span> min=240 max=1024 value=700&gt;&lt;br /&gt;
+&lt;input type=button onClick=<span style="color: #8b2252;">'newWindow()'</span> value=<span style="color: #8b2252;">"Open TheRegister.com"</span>&gt;
+
+&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">newWindow</span>(){
+   <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">x</span> = parseInt(document.getElementById(<span style="color: #8b2252;">'newX'</span>).value)
+   <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">y</span> = parseInt(document.getElementById(<span style="color: #8b2252;">'newY'</span>).value)
+   console.log(<span style="color: #8b2252;">'new Window X &amp; Y = '</span> + x + <span style="color: #8b2252;">', '</span> + y)
+   <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">newSize</span> = <span style="color: #8b2252;">"width="</span>+x+<span style="color: #8b2252;">", height="</span>+y
+   <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">newWin</span> = window.open(<span style="color: #8b2252;">"http://theRegister.com"</span>, <span style="color: #8b2252;">"T2"</span>, newSize)
+   console.log(<span style="color: #8b2252;">"Window created"</span>)
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+
+<h3>New Window Demo</h3>
+Width <input id="newX" min="320" max="1024" value="900" type="number"><br>
+Height <input id="newY" min="240" max="1024" value="700" type="number"><br>
+<input onclick="newWindow()" value="Open TheRegister.com" type="button">
+
+<script>
+function newWindow(){
+   var x = parseInt(document.getElementById('newX').value)
+   var y = parseInt(document.getElementById('newY').value)
+   console.log('new Window X & Y = ' + x + ', ' + y)
+   var newSize = "width="+x+", height="+y
+   var newWin = window.open("http://theRegister.com", "T2", newSize)
+   console.log("Window created")
+}
+</script>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgd63e7d3" class="outline-2 slide hidden">
+<h1><span>Using the colour selector</span></h1>
+<div class="outline-text-2" id="text-orgd63e7d3">
+<p>
+Note that the actual type is 'color' NOT the UK English 'colour'
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;h4&gt;Change Text Colour&lt;/h4&gt;
+&lt;div style=<span style="color: #8b2252;">'border:solid'</span>&gt;
+&lt;p id=<span style="color: #8b2252;">'colText'</span>&gt;Hi there, <span style="color: #a020f0;">let</span><span style="color: #8b2252;">'s change my colour!&lt;/p&gt;</span>
+
+<span style="color: #8b2252;">&lt;input type='</span>color<span style="color: #8b2252;">' id=colPicker value='</span>#00FF00<span style="color: #8b2252;">'&gt;</span>
+<span style="color: #8b2252;">&lt;input type=submit value='</span>Set Color<span style="color: #8b2252;">' onClick='</span>toRed()<span style="color: #8b2252;">'&gt;</span>
+
+<span style="color: #8b2252;">&lt;script&gt;</span>
+<span style="color: #8b2252;">function toRed(){</span>
+<span style="color: #8b2252;">   var textItem = document.getElementById('</span>colText<span style="color: #8b2252;">')</span>
+<span style="color: #8b2252;">   var colorValue = document.getElementById('</span>colPicker<span style="color: #8b2252;">').value</span>
+<span style="color: #8b2252;">   textItem.style.color=colorValue</span>
+<span style="color: #8b2252;">}</span>
+<span style="color: #8b2252;">&lt;/script&gt;</span>
+<span style="color: #8b2252;">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<h4>Change Text Colour</h4>
+<div style="border:solid">
+<p id="colText">Hi there, let's change my colour!</p>
+
+<input id="colPicker" value="#00ff00" type="color">
+<input value="Set Color" onclick="toRed()" type="submit">
+
+<script>
+function toRed(){
+   var textItem = document.getElementById('colText')
+   var colorValue = document.getElementById('colPicker').value
+   textItem.style.color=colorValue
+}
+</script>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org28e87ba" class="outline-2 slide hidden">
+<h1><span>Javascript Objects</span></h1>
+<div class="outline-text-2" id="text-org28e87ba">
+<p>
+Objects can be created by defining them (like Python dictionaries)
+</p>
+<ul class="org-ul">
+<li>can add more properties later</li>
+<li>can add <b>methods</b> by setting functions as properties</li>
+</ul>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">objectDemo</span>() {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">p</span> = {name: <span style="color: #8b2252;">'Belinda'</span>, eyecolor:<span style="color: #8b2252;">'#8888FF'</span>}
+    p.height = 1.6
+
+    p.getname = <span style="color: #a020f0;">function</span> () { <span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"My name is "</span> + <span style="color: #008b8b;">this</span>.name }
+
+    p.setname = <span style="color: #a020f0;">function</span> (<span style="color: #a0522d;">x</span>) {
+       <span style="color: #008b8b;">this</span>.name = x
+    }
+
+    alert(<span style="color: #8b2252;">'Eye color: '</span> + p.eyecolor)
+    alert(<span style="color: #8b2252;">'Name 1: '</span> + p.getname())
+    p.setname(<span style="color: #8b2252;">'Fred'</span>)
+    alert(<span style="color: #8b2252;">'Name 2: '</span> + p.getname())
+}
+&lt;/script&gt;
+
+&lt;button onclick=<span style="color: #8b2252;">"objectDemo()"</span>&gt; Run Object Demo &lt;/button&gt;
+</code></pre>
+</div>
+
+<script>
+function objectDemo() {
+    var p = {name: 'Belinda', eyecolor:'#8888FF'}
+    p.height = 1.6
+
+    p.getname = function () { return "My name is " + this.name }
+
+    p.setname = function (x) {
+       this.name = x
+    }
+   
+    alert('Eye color: ' + p.eyecolor)
+    alert('Name 1: ' + p.getname())
+    p.setname('Fred')
+    alert('Name 2: ' + p.getname())
+}
+</script>
+
+<button onclick="objectDemo()"> Run Object Demo </button>
+</div>
+<br><br></div>
+
+<div id="outline-container-org6d6ed8c" class="outline-2 slide hidden">
+<h1><span>Creating object by Constructor</span></h1>
+<div class="outline-text-2" id="text-org6d6ed8c">
+<p>
+Make a function to recreate and return a new object
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">Person</span>(<span style="color: #a0522d;">name</span>, <span style="color: #a0522d;">height</span>) {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">p</span> = {}
+    p.name = name
+    p.height = height
+    p.getname = <span style="color: #a020f0;">function</span> ()  { <span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"My name is "</span> + <span style="color: #008b8b;">this</span>.name }
+    p.setname = <span style="color: #a020f0;">function</span> (<span style="color: #a0522d;">x</span>) { <span style="color: #008b8b;">this</span>.name = x }
+    <span style="color: #a020f0;">return</span> p
+}
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">constructorDemo</span>() {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">will</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Person</span>(<span style="color: #8b2252;">'William'</span>, <span style="color: #8b2252;">'#FF0000'</span>) <span style="color: #b22222;">// </span><span style="color: #b22222;">make a new person</span>
+    alert(<span style="color: #8b2252;">'Name 1: '</span> + will.getname())
+    will.setname(<span style="color: #8b2252;">'Bill'</span>)
+    alert(<span style="color: #8b2252;">'Name 2: '</span> + will.getname())
+}
+&lt;/script&gt;
+
+&lt;button onclick=<span style="color: #8b2252;">"constructorDemo()"</span>&gt; Run constructor demo &lt;/button&gt;
+</code></pre>
+</div>
+
+<script>
+function Person(name, height) {
+    var p = {}
+    p.name = name
+    p.height = height
+    p.getname = function ()  { return "My name is " + this.name }
+    p.setname = function (x) { this.name = x }
+    return p
+}
+function constructorDemo() {
+    var will = new Person('William', '#FF0000') // make a new person
+    alert('Name 1: ' + will.getname())
+    will.setname('Bill')
+    alert('Name 2: ' + will.getname())
+}
+</script>
+
+<button onclick="constructorDemo()"> Run constructor demo </button>
+</div>
+<br><br></div>
+
+<div id="outline-container-org207c8c5" class="outline-2 slide hidden">
+<h1><span>A simpler object constructor</span></h1>
+<div class="outline-text-2" id="text-org207c8c5">
+<ul class="org-ul">
+<li><b>this</b> refers to the current object - we can use it as the prototype</li>
+<li>IMPORTANT: use <b>new</b> when invoking the constructor</li>
+</ul>
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">Person</span>(<span style="color: #a0522d;">name</span>, <span style="color: #a0522d;">height</span>) {
+    <span style="color: #008b8b;">this</span>.name = name
+    <span style="color: #008b8b;">this</span>.height = height
+    <span style="color: #008b8b;">this</span>.getname = <span style="color: #a020f0;">function</span> ()  { <span style="color: #a020f0;">return</span> <span style="color: #8b2252;">"My name is "</span> + <span style="color: #008b8b;">this</span>.name }
+    <span style="color: #008b8b;">this</span>.setname = <span style="color: #a020f0;">function</span> (<span style="color: #a0522d;">x</span>) { <span style="color: #008b8b;">this</span>.name = x }
+    <span style="color: #a020f0;">return</span> <span style="color: #008b8b;">this</span>
+}
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">constructorDemo</span>() {
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">p1</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Person</span>(<span style="color: #8b2252;">'Cynthia'</span>, <span style="color: #8b2252;">'#FF0000'</span>) <span style="color: #b22222;">// </span><span style="color: #b22222;">make a new person</span>
+    alert(<span style="color: #8b2252;">'Person 1: '</span> + p1.getname())
+
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">p2</span> = <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Person</span>(<span style="color: #8b2252;">'David'</span>, <span style="color: #8b2252;">'#00FF00'</span>)
+    alert(<span style="color: #8b2252;">'Person 2: '</span> + p2.getname())
+    alert(<span style="color: #8b2252;">'Person 1: '</span> + p1.getname() + <span style="color: #8b2252;">"should be 'Cynthia'"</span>)
+}
+&lt;/script&gt;
+
+&lt;button onclick=<span style="color: #8b2252;">"constructorDemo()"</span>&gt; Run constructor demo &lt;/button&gt;
+</code></pre>
+</div>
+
+<script>
+function Person2(name, height) {
+    this.name = name
+    this.height = height
+    this.getname = function ()  { return "My name is " + this.name }
+    this.setname = function (x) { this.name = x }
+    return this
+}
+function constructor2_Demo() {
+    var p1 = new Person('Cynthia', '#FF0000') // make a new person
+    alert('Person 1: ' + p1.getname())
+
+    var p2 = new Person('David', '#00FF00')
+    alert('Person 2: ' + p2.getname())
+    alert('Person 1: ' + p1.getname() + " <- should be 'Cynthia'")
+    }
+</script>
+
+<button onclick="constructor2_Demo()"> Run simpler constructor demo </button>
+
+<p>
+Skim: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS</a>
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org1ebbf8c" class="outline-2 slide hidden">
+<h1><span>Javascript Exception Handling #1</span></h1>
+<div class="outline-text-2" id="text-org1ebbf8c">
+<p>
+Just as in Python, there are places where you know the code might fail.
+</p>
+
+<p>
+There's the try-catch (NOT try-except) construct to hand this
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">try</span> {
+   code that might fail
+}
+<span style="color: #a020f0;">catch</span> (err) {
+   <span style="color: #b22222;">// </span><span style="color: #b22222;">err is an exception object - you can find what happened</span>
+}
+</code></pre>
+</div>
+
+<p>
+<b>err</b> is an error object with properties:
+</p>
+<ul class="org-ul">
+<li>err.name</li>
+<li>err.message</li>
+</ul>
+
+<p>
+Skim: <a href="https://www.w3schools.com/js/js_errors.asp">https://www.w3schools.com/js/js_errors.asp</a> 
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org21d65ad" class="outline-2 slide hidden">
+<h1><span>Javascript Exceptions - <i>finally</i> &amp; <i>throw</i></span></h1>
+<div class="outline-text-2" id="text-org21d65ad">
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">try</span> {
+   code that might fail
+}
+<span style="color: #a020f0;">catch</span> (err) {
+   <span style="color: #b22222;">// </span><span style="color: #b22222;">err is an exception object - you can find what happened</span>
+}
+<span style="color: #a020f0;">finally</span> {    <span style="color: #b22222;">// </span><span style="color: #b22222;">This block is optional</span>
+   <span style="color: #b22222;">// </span><span style="color: #b22222;">always do this</span>
+}
+</code></pre>
+</div>
+</div>
+
+<div id="outline-container-orgea583b8" class="outline-3 incremental">
+<h3 id="orgea583b8"><i>throw</i> can be used to raise exceptions</h3>
+<div class="outline-text-3" id="text-orgea583b8">
+<p>
+for details, <b>skim</b> <a href="https://www.w3schools.com/js/js_errors.asp">https://www.w3schools.com/js/js_errors.asp</a> 
+</p>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgfe2120d" class="outline-2 slide hidden">
+<h1><span>Converting Numbers - parseInt() &amp; parseFloat()</span></h1>
+<div class="outline-text-2" id="text-orgfe2120d">
+<p>
+You can convert string to an <i>int</i> or a <i>float</i>
+</p>
+<ul class="org-ul">
+<li>only the first number will be returned</li>
+<li>if there's no number, the object <b>NaN</b> will be returned</li>
+<li><p>
+use isNaN(s) to test returned object:
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript">y = parseFloat(S)    <span style="color: #b22222;">// </span><span style="color: #b22222;">Try to convert string S</span>
+<span style="color: #a020f0;">if</span> (isNaN(y))
+  alert(<span style="color: #8b2252;">"isNaN(y): S is not a number"</span>)
+<span style="color: #a020f0;">else</span>
+  <span style="color: #b22222;">// </span><span style="color: #b22222;">y is a float - now use it ...</span>
+</code></pre>
+</div></li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgf1082aa" class="outline-2 slide hidden">
+<h1><span>parseInt() &amp; parseFloat example</span></h1>
+<div class="outline-text-2" id="text-orgf1082aa">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+  <span style="color: #a020f0;">function</span> <span style="color: #0000ff;">testConversion</span>() {
+    alert(  parseInt(<span style="color: #8b2252;">'123.8andme'</span>));
+    alert(parseFloat(<span style="color: #8b2252;">'123.8andme'</span>));
+
+    <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">y</span> = parseFloat(<span style="color: #8b2252;">"Gidday"</span>)
+
+    <span style="color: #a020f0;">if</span> (y == <span style="color: #8b2252;">'NaN'</span>) 
+      alert(<span style="color: #8b2252;">"y == 'Nan': That's not a number"</span>)
+
+    <span style="color: #a020f0;">if</span> (isNaN(y))
+      alert(<span style="color: #8b2252;">"isNaN(y): That's not a number"</span>)
+
+    <span style="color: #a020f0;">try</span> {
+      <span style="color: #a020f0;">if</span> (y == Nan)  
+        alert(<span style="color: #8b2252;">"y == Nan: That's not a number"</span>);
+    }
+    <span style="color: #a020f0;">catch</span> (err) {
+      alert(<span style="color: #8b2252;">"Got an Exception: "</span> + err.message)
+    }
+  }
+&lt;/script&gt;
+
+&lt;p&gt;Click the evaluate.&lt;/p&gt;
+&lt;button onclick=<span style="color: #8b2252;">"testConversion()"</span>&gt;test parseInt() &amp; parseFloat() conversions&lt;/button&gt;
+</code></pre>
+</div>
+
+<script>
+  function testConversion() {
+    alert(  parseInt('123.8andme'));
+    alert(parseFloat('123.8andme'));
+
+    var y = parseFloat("Gidday")
+
+    if (y == 'NaN') 
+      alert("y == 'Nan': That's not a number")
+
+    if (isNaN(y))
+      alert("isNaN(y): That's not a number")
+
+    try {
+      if (y == Nan)  
+        alert("y == Nan: That's not a number");
+    }
+    catch (err) {
+      alert("Got an Exception: " + err.message)
+    }
+  }
+</script>
+
+<b>Try it: </b>
+<button onclick="testConversion()" style="font-size:100%">test parseInt() &amp; parseFloat() conversions</button>
+</div>
+<br><br></div>
+</div>
+
+
+<div class="toolbar hidden" tabindex="0" style="display: block;"><div style="float: right; text-align: right"><span>slide 1/18</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><a href="http://www.w3.org/Talks/Tools/Slidy2/help/help.html" title="Navigate with mouse click, space bar, Cursor Left/Right, or Pg Up and Pg Dn. Use S and B to change font size.">help?</a> <a href="javascript:w3c_slidy.toggle_table_of_contents()" title="table of contents">contents?</a> </div></div></body></html>

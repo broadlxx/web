@@ -1,0 +1,1414 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<!-- 2017-09-16 Sat 16:12 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>‎ (1)</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Giovanni Moretti">
+<!-- configuration parameters --> <meta name="font-size-adjustment" content="4"> <!-- style sheet links --> <link rel="stylesheet" href="1-javascript.html%23(1)_files/slidy.css" type="text/css"><link rel="stylesheet" href="1-javascript.html%23(1)_files/slidyGM.css" type="text/css"> <!-- HTMTLSLIDY JS -->  <script src="1-javascript.html%23(1)_files/slidy.js" type="text/javascript"> </script> <script src="1-javascript.html%23(1)_files/jquery.js" type="text/javascript"> </script> <script src="1-javascript.html%23(1)_files/org-slidy-slides.js" type="text/javascript"></script>
+</head>
+<body style="visibility: visible; font-size: 24pt;" class=""><div class=" slidy_toc hidden"><div class=" toc-heading">Table of Contents</div>1. <a href="#(1)">‎(1)</a><br>2. <a href="#(2)">How these slides are created</a><br>3. <a href="#(3)">Overview of Part 2 - adding scripts</a><br>4. <a href="#(4)">Part 2 - Topics</a><br>5. <a href="#(5)">Part 2 - Learning Resources</a><br>6. <a href="#(6)">Fancy Dynamic Webpages with Javascript</a><br>7. <a href="#(7)">The emergence of JavaScript</a><br>8. <a href="#(8)">Javascript &amp; ECMAScript</a><br>9. <a href="#(9)">What is JavaScript?</a><br>10. <a href="#(10)">JavaScript is hard to secure</a><br>11. <a href="#(11)">Similarities to other languages</a><br>12. <a href="#(12)">Example of JavaScript Syntax</a><br>13. <a href="#(13)">JavaScript is NOT the same as Java</a><br>14. <a href="#(14)">JavaScript - can be part of HTML document</a><br>15. <a href="#(15)">Client-Server Architecture</a><br>16. <a href="#(16)">Where is JavaScript used?</a><br>17. <a href="#(17)">What can you do with JavaScript?</a><br>18. <a href="#(18)">Multiple ways of including JavaScript</a><br>19. <a href="#(19)">Linking Javascript and HTML</a><br>20. <a href="#(20)">The DOM - Document Object Model</a><br>21. <a href="#(21)">JavaScript can be used to manipulate DOM elements</a><br>22. <a href="#(22)">Dynamically changing the body font</a><br>23. <a href="#(23)">Now the Body Font Change code in action</a><br>24. <a href="#(24)">Getting started with Javascript</a><br>25. <a href="#(25)">JavaScript Language - Basics</a><br>26. <a href="#(26)">Javascript and Semicolons</a><br>27. <a href="#(27)">JavaScript Basics</a><br>28. <a href="#(28)">Variable Declarations</a><br>29. <a href="#(29)">Javascript comments</a><br>30. <a href="#(30)">Javascript expressions and assignment</a><br>31. <a href="#(31)">Relational Operators</a><br>32. <a href="#(32)">Logical (Boolean) Operators</a><br>33. <a href="#(33)">Ternary Operator</a><br>34. <a href="#(34)">Javascript data types</a><br>35. <a href="#(35)">Native Objects</a><br>36. <a href="#(36)">Arrays</a><br>37. <a href="#(37)">Automatic Type Coercion (conversion)</a><br>38. <a href="#(38)">Object Coercion</a><br>39. <a href="#(39)">Functions</a><br>40. <a href="#(40)">JavaScript if-else statement</a><br>41. <a href="#(41)">JavaScript for loop</a><br>42. <a href="#(42)">For loop Example</a><br>43. <a href="#(43)">Google Maps demo</a></div>
+<div id="content">
+<style>code{background-color:#FFD} </style>
+
+<div id="outline-container-org4a33b84" class="outline-2 slide first-slide">
+<h1><span></span></h1>
+<div class="outline-text-2" id="text-org4a33b84">
+<div class="titlepage">
+<p>
+158.258 - Part 2 - Mostly Javascript
+</p>
+
+<div class="smaller">
+<p>
+Dr Giovanni Moretti
+</p>
+
+</div>
+
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org528c1e7" class="outline-2 slide hidden">
+<h1><span>How these slides are created</span></h1>
+<div class="outline-text-2" id="text-org528c1e7">
+<ul class="org-ul">
+<li><b>Emacs Orgmode</b>
+<ul class="org-ul">
+<li>text-based markup</li>
+<li><a href="http://orgmode.org/" rel="external">http://orgmode.org/</a></li>
+</ul></li>
+
+<li><b>Org-slidy</b>
+<ul class="org-ul">
+<li>exports text to HTML slides</li>
+</ul></li>
+<li><p>
+<b>Slidy</b>
+</p>
+<ul class="org-ul">
+<li>displays slides one-at-at-time</li>
+</ul>
+<ul class="org-ul">
+<li><a href="https://www.w3.org/Talks/Tools/Slidy2">https://www.w3.org/Talks/Tools/Slidy2</a></li>
+</ul></li>
+</ul>
+
+<p>
+Press 'a' key to see all in usual scrolling view
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org38262cd" class="outline-2 slide hidden">
+<h1><span>Overview of Part 2 - adding scripts</span></h1>
+<div class="outline-text-2" id="text-org38262cd">
+</div>
+<div id="outline-container-org6369c5d" class="outline-3 incremental">
+<h3 id="org6369c5d">This section of the course focusses on JavaScript</h3>
+<div class="outline-text-3" id="text-org6369c5d">
+<p>
+We will NOT
+</p>
+<ul class="org-ul">
+<li>cover everything</li>
+<li>cover older non-compliant browsers (Modernizr library helps here)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfc7fc03" class="outline-3 incremental">
+<h3 id="orgfc7fc03">Examples will be functional, not pretty</h3>
+<div class="outline-text-3" id="text-orgfc7fc03">
+<ul class="org-ul">
+<li>this section of the course is on adding functionality.</li>
+<li>this sits within the context of CSS and HTML5 constructs you've already covered</li>
+</ul>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org38a2974" class="outline-2 slide hidden">
+<h1><span>Part 2 - Topics</span></h1>
+<div class="outline-text-2" id="text-org38a2974">
+<ul class="org-ul">
+<li>JavaScript language and the DOM</li>
+<li>JavaScript debugging</li>
+<li>HTML5 Canvas</li>
+<li>HTML5 Geolocation</li>
+<li>HTML5 Local Storage</li>
+<li>JSON - serialising data</li>
+<li>AJAX</li>
+<li>Using Web APIs (Application Programmer Interfaces)</li>
+<li>JavaScript Frameworks</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org712984f" class="outline-2 slide hidden">
+<h1><span>Part 2 - Learning Resources</span></h1>
+<div class="outline-text-2" id="text-org712984f">
+<dl class="org-dl">
+<dt>Brilliant web technology resource</dt><dd><a href="http://w3schools.com/" rel="external">http://w3schools.com</a></dd>
+<dt>Online JavaScript/HTML developer console</dt><dd><a href="http://jsfiddle.net/" rel="external">http://jsfiddle.net</a></dd>
+<dt>Debugging Tools</dt><dd><i>Chrome</i> - View Menu/Developer .. or <i>Firefox</i> - Developer Tools (press f12)</dd>
+<dt>JavaScript - best practise</dt><dd><a href="https://www.w3schools.com/js/js_best_practices.asp">https://www.w3schools.com/js/js_best_practices.asp</a></dd>
+<dt>JavaScript Style Guide and Coding Conventions</dt><dd><a href="https://www.w3schools.com/js/js_conventions.asp">https://www.w3schools.com/js/js_conventions.asp</a></dd>
+<dt>JavaScript Mistakes</dt><dd><a href="https://www.w3schools.com/js/js_mistakes.asp">https://www.w3schools.com/js/js_mistakes.asp</a></dd>
+</dl>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgb05e5f4" class="outline-2 slide hidden">
+<h1><span>Fancy Dynamic Webpages with Javascript</span></h1>
+<div class="outline-text-2" id="text-orgb05e5f4">
+<ul class="org-ul">
+<li><a href="https://insidediscovery.pitchfork.com/">https://insidediscovery.pitchfork.com/</a></li>
+<li><a href="https://artsandculture.withgoogle.com/en-us/">https://artsandculture.withgoogle.com/en-us/</a></li>
+<li><a href="https://thefwa.com/">https://thefwa.com/</a></li>
+<li>D3 online graphics - <a href="https://d3js.org/">https://d3js.org/</a></li>
+<li>Google: GMail, Docs …</li>
+</ul>
+
+<p>
+How do they do it?
+</p>
+<ul class="org-ul">
+<li>You need to learn JavaScript!</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org832fa4d" class="outline-2 slide hidden">
+<h1><span>The emergence of JavaScript</span></h1>
+<div class="outline-text-2" id="text-org832fa4d">
+<p>
+In 1990s, Marc Andreessen, the founder of Netscape, believed that:
+</p>
+<blockquote>
+<p>
+HTML needed a “glue language” that was easy to use to assemble components such as images and plugins.
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li>In 1995, Brendan Eich developed a script language called LiveScript.</li>
+<li>In 1995, LiveScript was renamed to JavaScript.</li>
+</ul>
+
+<p>
+Many variants, some vendor specific
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgcb95725" class="outline-2 slide hidden">
+<h1><span>Javascript &amp; ECMAScript</span></h1>
+<div class="outline-text-2" id="text-orgcb95725">
+<p>
+You'll come across references to ECMAScript 
+</p>
+
+<blockquote>
+<p>
+ECMAScript (or ES) is a trademarked scripting-language specification 
+standardized by Ecma International in ECMA-262 and ISO/IEC 16262. It was
+ created to standardize JavaScript, so as to foster multiple independent
+ implementations. 
+</p>
+
+<p>
+ECMAScript has remained the best-known implementation of JavaScript 
+since the standard was first published, with other well-known 
+implementations including JScript and ActionScript.<br>
+….<br>
+<b>While both JavaScript and JScript aim to be compatible with 
+ECMAScript, they also provide additional features not described in the 
+ECMA specifications.</b><br>
+– from <a href="https://en.wikipedia.org/wiki/ECMAScript">https://en.wikipedia.org/wiki/ECMAScript</a>
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><i>ECMA</i> - European Computer Manufacturer’s Association</li>
+<li><i>JScript</i>, from Microsoft</li>
+<li><i>ActionScript</i>, from Adobe Corporation</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgb984ce5" class="outline-2 slide hidden">
+<h1><span>What is JavaScript?</span></h1>
+<div class="outline-text-2" id="text-orgb984ce5">
+<p>
+It's a programming language
+</p>
+<ul class="org-ul">
+<li>now built-into web browsers</li>
+<li>programs are called 'scripts'</li>
+</ul>
+
+<table rules="groups" frame="hsides" cellspacing="0" cellpadding="6" border="2">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>Washing machine</b></th>
+<th scope="col" class="org-left">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>Script 1</i> (delicate)</td>
+<td class="org-left"><i>Script 2</i> (cotton)</td>
+</tr>
+
+<tr>
+<td class="org-left">Wash 10min</td>
+<td class="org-left">Wash 20min</td>
+</tr>
+
+<tr>
+<td class="org-left">Rinse 10 min</td>
+<td class="org-left">Rinse 10min</td>
+</tr>
+
+<tr>
+<td class="org-left">Spin 4min</td>
+<td class="org-left">Super Spin dry 20min</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+JavaScript is an <i>Interpreted language</i>:
+</p>
+<ul class="org-ul">
+<li>The interpreter executes the program directly</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org152951d" class="outline-2 slide hidden">
+<h1><span>JavaScript is hard to secure</span></h1>
+<div class="outline-text-2" id="text-org152951d">
+<p>
+You send the code to the remote end
+</p>
+
+<p>
+Disadvantages:
+</p>
+<ul class="org-ul">
+<li>Susceptible to <i>code injection attacks</i></li>
+<li>Source code can be read and copied</li>
+</ul>
+
+<p>
+<b>This is good for us:</b>
+</p>
+<ul class="org-ul">
+<li>Learn scripts from Chrome Developer Tools!</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgc6f28f9" class="outline-2 slide hidden">
+<h1><span>Similarities to other languages</span></h1>
+<div class="outline-text-2" id="text-orgc6f28f9">
+</div>
+<div id="outline-container-org17229e7" class="outline-3 incremental">
+<h3 id="org17229e7">JavaScript belongs to the C-style class of languages</h3>
+<div class="outline-text-3" id="text-org17229e7">
+<ul class="org-ul">
+<li>uses braces to define structure
+<ul class="org-ul">
+<li>indenting is important only for human readers</li>
+</ul></li>
+<li>semicolons terminate statements, but assumed at EOL</li>
+<li><i>if</i> and <i>while</i> conditions need parentheses</li>
+<li><i>for</i> loop has a different structure to Python</li>
+</ul>
+</div>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-org2525cdb" class="outline-2 slide hidden">
+<h1><span>Example of JavaScript Syntax</span></h1>
+<div class="outline-text-2" id="text-org2525cdb">
+<div class="org-src-container">
+<pre><code class="src src-javascript">originalFont = <span style="color: #008b8b;">null</span>   <span style="color: #b22222;">// </span><span style="color: #b22222;">Global - place to save original</span>
+fontChanges = Array();
+
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">setFont</span>(<span style="color: #a0522d;">whichFont</span>){
+   <span style="color: #a020f0;">if</span> (originalFont == <span style="color: #008b8b;">null</span>) {
+      originalFont = document.body.style.fontFamily;
+   }
+   document.body.style.fontFamily = whichFont;
+   fontChanges.push(whichFont);
+}
+
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">showChanges</span>(){
+   <span style="color: #a020f0;">if</span> (fontChanges.length == 0) 
+      alert(<span style="color: #8b2252;">"No changes"</span>)
+   <span style="color: #a020f0;">else</span> {
+      s = <span style="color: #8b2252;">''</span>
+      <span style="color: #a020f0;">for</span> (i=0; i&lt;fontChanges.length; i++) {
+        s = s + fontChanges[i] + <span style="color: #8b2252;">'&lt;br&gt;'</span>
+      document.getElementById(<span style="color: #8b2252;">'changeList'</span>).innerHTML = s
+      }
+   }
+}
+
+</code></pre>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgc4da38e" class="outline-2 slide hidden">
+<h1><span>JavaScript is NOT the same as Java</span></h1>
+<div class="outline-text-2" id="text-orgc4da38e">
+<p>
+Some notable differences between JavaScript and Java …
+</p>
+
+<table rules="groups" frame="hsides" cellspacing="0" cellpadding="6" border="2">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&nbsp;</th>
+<th scope="col" class="org-left"><b>JavaScript</b></th>
+<th scope="col" class="org-left"><b>Java</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>Typing</b></td>
+<td class="org-left">Dynamic Typing</td>
+<td class="org-left">Static Typing</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Loaded from</b></td>
+<td class="org-left">Source code</td>
+<td class="org-left">Complied bytecode</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Main paradigm</b></td>
+<td class="org-left">Imperative</td>
+<td class="org-left">Object-oriented</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Primarily used</b></td>
+<td class="org-left">in web clients</td>
+<td class="org-left">in web servers</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Security</b></td>
+<td class="org-left">not an original design goal</td>
+<td class="org-left">designed in …</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Similarities: 
+</p>
+<ul class="org-ul">
+<li>syntax</li>
+<li>standard libraries including Date, Math, and RegExp.</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgd61573a" class="outline-2 slide hidden">
+<h1><span>JavaScript - can be part of HTML document</span></h1>
+<div class="outline-text-2" id="text-orgd61573a">
+<p>
+<b>Example</b>
+</p>
+
+<div class="lbox incremental">
+<div class="org-src-container">
+<pre><code class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #0000ff;">html</span>&gt;
+&lt;<span style="color: #0000ff;">body</span>&gt;
+
+&lt;<span style="color: #0000ff;">h4</span>&gt;<span style="text-decoration: underline;">My First Web Page</span>&lt;/<span style="color: #0000ff;">h4</span>&gt;
+&lt;<span style="color: #0000ff;">p</span>&gt;My first paragraph.&lt;/<span style="color: #0000ff;">p</span>&gt;
+
+&lt;<span style="color: #0000ff;">script</span>&gt;
+document.write(15 + 9);
+&lt;/<span style="color: #0000ff;">script</span>&gt;
+
+&lt;/<span style="color: #0000ff;">body</span>&gt;
+&lt;/<span style="color: #0000ff;">html</span>&gt;
+</code></pre>
+</div>
+
+</div>
+
+<div class="rbox incremental">
+
+
+
+
+<h4>My First Web Page</h4>
+<p>My first paragraph.</p>
+
+<script>
+document.write(15 + 9);
+</script>24
+
+
+
+
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org533658e" class="outline-2 slide hidden">
+<h1><span>Client-Server Architecture</span></h1>
+<div class="outline-text-2" id="text-org533658e">
+<ul class="org-ul">
+<li>Server (the 'back end') usually uses a database</li>
+
+<li>Clients - the 'front end'
+<ul class="org-ul">
+<li>Gather information from user</li>
+<li>Submit information to server</li>
+<li>Receive, format, and present results returned from the server.</li>
+</ul></li>
+</ul>
+
+<p>
+<b>Content split</b>
+</p>
+<ul class="org-ul">
+<li>this course (158.258) - deals with <i>client-side</i></li>
+<li>159.352 - deals with server-side …</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org833c069" class="outline-2 slide hidden">
+<h1><span>Where is JavaScript used?</span></h1>
+<div class="outline-text-2" id="text-org833c069">
+
+<div class="figure">
+<p><img src="1-javascript.html%23(1)_files/javascript-1.htm" alt="javascript-1.org-javascript-client-server.gif">
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Client-side scripting language: JavaScript</li>
+<li>Server-side scripting language: PHP, ASP, Java, Python &amp; <b>JavaScript</b></li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org646c276" class="outline-2 slide hidden">
+<h1><span>What can you do with JavaScript?</span></h1>
+<div class="outline-text-2" id="text-org646c276">
+<ul class="org-ul">
+<li>Load new page content without reloading the page. <br>
+e.g. gmail, best matches in 'Search' box</li>
+<li>Animation of page elements. 
+e.g. fade in, fade out, resize, move.</li>
+<li>Interactive content. 
+e.g. games, playing audio and video.</li>
+<li>Validate input values before sending them to the server.</li>
+</ul>
+
+<p>
+Pretty much anything …
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org346ba79" class="outline-2 slide hidden">
+<h1><span>Multiple ways of including JavaScript</span></h1>
+<div class="outline-text-2" id="text-org346ba79">
+</div>
+<div id="outline-container-orgb0535a0" class="outline-3 incremental">
+<h3 id="orgb0535a0">Using the &lt;script&gt; element:</h3>
+<div class="outline-text-3" id="text-orgb0535a0">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script type=’’text/javascript’’&gt; 
+document.write(15 + 9);
+&lt;/script&gt;
+</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org82e1d3f" class="outline-3 incremental">
+<h3 id="org82e1d3f">Import JavaScript code from a external file</h3>
+<div class="outline-text-3" id="text-org82e1d3f">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script src=”URL” &lt;/script&gt;
+
+&lt;script src=”URL” type=’text/javascript’&gt;&lt;/script&gt;
+</code></pre>
+</div>
+<p>
+Don't include &lt;script&gt; .. &lt;/noscript&gt; in external file
+</p>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org17b862d" class="outline-2 slide hidden">
+<h1><span>Linking Javascript and HTML</span></h1>
+<div class="outline-text-2" id="text-org17b862d">
+<p>
+Pieces of Javascript can be called when the user does something:
+</p>
+
+<ul class="org-ul">
+<li>the 'something' are called <i>events</i></li>
+</ul>
+
+<p>
+There are dozens of event: onLoad, onHover, onBlur, onClick …
+</p>
+</div>
+
+<div id="outline-container-org5d8c946" class="outline-3 incremental">
+<h3 id="org5d8c946">e.g. call a JavaScript function when a button is clicked</h3>
+<div class="outline-text-3" id="text-org5d8c946">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;input type=<span style="color: #8b2252;">"button"</span> value=<span style="color: #8b2252;">"Click Me"</span> onclick=<span style="color: #8b2252;">"myFunction()"</span>&gt;
+</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96c0e77" class="outline-3 incremental">
+<h3 id="org96c0e77">Call the built-in function <i>alert()</i></h3>
+<div class="outline-text-3" id="text-org96c0e77">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;input type=<span style="color: #8b2252;">"button"</span> value=<span style="color: #8b2252;">"Click Me"</span> onclick=<span style="color: #8b2252;">"alert('Go away')"</span>&gt;
+</code></pre>
+</div>
+
+<p>
+Running this:
+</p>
+<input value="Click Me" style="font-size:100%;margin-left:3em" onclick="alert('Go away')" type="button">
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org26fd1aa" class="outline-2 slide hidden">
+<h1><span>The DOM - Document Object Model</span></h1>
+<div class="outline-text-2" id="text-org26fd1aa">
+<p>
+When a HTML document is rendered, parts of the page are accessible
+</p>
+<ul class="org-ul">
+<li>the structure is called the <b>DOM</b> (Document Object Model)</li>
+</ul>
+
+<div class="lbox incremental">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;“my title”&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;“A heading”&lt;/h1&gt;
+&lt;a href = ...&gt; “Link text” &lt;/a&gt;
+</code></pre>
+</div>
+
+<p>
+<b>The Document has a tree structure</b>
+</p>
+
+</div>
+
+<div class="rbox incremental">
+
+<div class="figure">
+<p><img src="1-javascript.html%23(1)_files/DOM-excerpt.gif" alt="DOM-excerpt.gif">
+</p>
+</div>
+
+</div>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-org6a29178" class="outline-2 slide hidden">
+<h1><span>JavaScript can be used to manipulate DOM elements</span></h1>
+<div class="outline-text-2" id="text-org6a29178">
+<p>
+JavaScript can use the <b>document</b> object to
+</p>
+
+<ul class="org-ul">
+<li>add, change, and remove HTML elements and attributes</li>
+<li>inject content into HTML elements</li>
+<li>change CSS styles</li>
+<li>react to events and create new events</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgaeb6e55" class="outline-2 slide hidden">
+<h1><span>Dynamically changing the body font</span></h1>
+<div class="outline-text-2" id="text-orgaeb6e55">
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;h4&gt;Change Body Font&lt;/h4&gt;
+
+&lt;input type=submit value=<span style="color: #8b2252;">'Body Font is Arial  '</span> onClick=<span style="color: #8b2252;">"setFont('Arial'  )"</span>&gt; &lt;br&gt;
+&lt;input type=submit value=<span style="color: #8b2252;">'Body Font is Georgia'</span> onClick=<span style="color: #8b2252;">"setFont('Georgia')"</span>&gt; &lt;br&gt;
+&lt;input type=submit value=<span style="color: #8b2252;">'Body Font is Times  '</span> onClick=<span style="color: #8b2252;">"setFont('Times'  )"</span>&gt; &lt;br&gt;
+&lt;input type=submit value=<span style="color: #8b2252;">'Revert Body Font    '</span> onClick=<span style="color: #8b2252;">"revertFont()"</span>      &gt; &lt;br&gt;
+&lt;input type=submit value=<span style="color: #8b2252;">'Show Changes        '</span> onClick=<span style="color: #8b2252;">"showChanges()"</span>     &gt;
+
+&lt;p&gt;&lt;b&gt;Changes&lt;/b&gt;&lt;/p&gt;
+&lt;p id = <span style="color: #8b2252;">'changeList'</span>&gt; None yet &lt;/p&gt;
+
+&lt;script&gt;
+originalFont=<span style="color: #008b8b;">null</span>  <span style="color: #b22222;">// </span><span style="color: #b22222;">Global - place to save original</span>
+fontChanges = Array();
+
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">setFont</span>(<span style="color: #a0522d;">whichFont</span>){
+   <span style="color: #a020f0;">if</span> (originalFont == <span style="color: #008b8b;">null</span>) {
+      originalFont = document.body.style.fontFamily;
+   }
+   document.body.style.fontFamily = whichFont
+   fontChanges.push(whichFont)
+}
+
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">showChanges</span>(){
+   <span style="color: #a020f0;">if</span> (fontChanges.length == 0) 
+     alert(<span style="color: #8b2252;">"No changes"</span>)
+   <span style="color: #a020f0;">else</span> {
+      s = <span style="color: #8b2252;">''</span>
+      <span style="color: #a020f0;">for</span> (i=0; i&lt;fontChanges.length; i++) {
+        s = s + fontChanges[i] + <span style="color: #8b2252;">'&lt;br&gt;'</span>
+      document.getElementById(<span style="color: #8b2252;">'changeList'</span>).innerHTML = s
+      }
+   }
+}
+&lt;/script&gt;
+</code></pre>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgc85e219" class="outline-2 slide hidden">
+<h1><span>Now the Body Font Change code in action</span></h1>
+<div class="outline-text-2" id="text-orgc85e219">
+<div style="border:dashed">
+<h4>Change Body Font</h4>
+<input value="Body Font is Arial  " onclick="setFont('Arial')" type="submit"> <br>
+<input value="Body Font is Georgia" onclick="setFont('Georgia')" type="submit"> <br>
+<input value="Body Font is Times  " onclick="setFont('Times')" type="submit"> <br>
+<input value="Revert Body Font    " onclick="revertFont()" type="submit"> <br>
+<input value="Show Changes        " onclick="showChanges()" type="submit">
+
+<p><b>Changes</b></p>
+<p id="changeList"> None yet </p>
+<script>
+originalFont=null  // Global - place to save original
+fontChanges = Array();
+
+function setFont(whichFont){
+   if (originalFont == null) {
+      originalFont = document.body.style.fontFamily;
+   }
+   document.body.style.fontFamily = whichFont
+   fontChanges.push(whichFont)
+}
+
+function revertFont(){
+    if (originalFont == null) {
+      alert("Font hasn't changed")
+    }
+    else {
+     // What was the original font?
+     // alert("Changing font to "+JSON.stringify(originalFont))
+     document.body.style.fontFamily = originalFont
+    }
+}
+function showChanges(){
+   if (fontChanges.length == 0) 
+     alert("No changes")
+   else {
+      s = ''
+      for (i=0; i<fontChanges.length; i++) {
+        s = s + fontChanges[i] + '<br>'
+      document.getElementById('changeList').innerHTML = s
+      }
+   }
+}
+</script>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orged90da9" class="outline-2 slide hidden">
+<h1><span>Getting started with Javascript</span></h1>
+<div class="outline-text-2" id="text-orged90da9">
+<p>
+To write the code, any editor will work
+</p>
+<ul class="org-ul">
+<li>Eclipse is good</li>
+</ul>
+
+<p>
+For Debugging, use Chrome's Developer Tools
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.w3schools.com/js/js_intro.asp" rel="external">http://www.w3schools.com/js/js_intro.asp</a></li>
+<li><a href="http://www.w3schools.com/js/default.asp" rel="external">http://www.w3schools.com/js/default.asp</a></li>
+</ul>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-orgae3e317" class="outline-2 slide hidden">
+<h1><span>JavaScript Language - Basics</span></h1>
+<div class="outline-text-2" id="text-orgae3e317">
+<ul class="org-ul">
+<li>Statements: separated by semicolons.</li>
+<li>indentation is NOT important</li>
+
+<li><p>
+Variables, Values &amp; Assignments:
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript">&lt;script&gt;
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">length</span> = 16;                             <span style="color: #b22222;">// </span><span style="color: #b22222;">Number</span>
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">lastName</span> = <span style="color: #8b2252;">"Johnson"</span>;                    <span style="color: #b22222;">// </span><span style="color: #b22222;">String</span>
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">cars</span>     = [ <span style="color: #8b2252;">'volvo'</span>, <span style="color: #8b2252;">'BMW'</span>, <span style="color: #8b2252;">'Toyota'</span> ]; <span style="color: #b22222;">// </span><span style="color: #b22222;">Array</span>
+  <span style="color: #a020f0;">var</span> <span style="color: #a0522d;">x</span> = {firstName:<span style="color: #8b2252;">"John"</span>, lastname:<span style="color: #8b2252;">"Doe"</span> }; <span style="color: #b22222;">// </span><span style="color: #b22222;">Object</span>
+&lt;/script&gt;
+</code></pre>
+</div></li>
+
+<li><p>
+Adding a button:
+</p>
+<div class="org-src-container">
+<pre><code class="src src-html">A button -&gt; &lt;<span style="color: #0000ff;">input</span> <span style="color: #a0522d;">type</span>="button"
+               <span style="color: #a0522d;">value</span>="ClickMe"
+               <span style="color: #a0522d;">style</span>="font-size:100%;color:red" 
+               <span style="color: #a0522d;">onclick</span>="alert('Hi there: '+x.firstName+
+                              ' likes '+cars[1]);" 
+               &gt;
+</code></pre>
+</div></li>
+</ul>
+
+<script>
+    var length = 16;                             // Number
+    var lastName = "Johnson";                    // String
+    var cars     = [ 'volvo', 'BMW', 'Toyota' ]; // Array
+    var x = {firstName:"John", lastname:"Doe" }; // Object
+</script>
+A button -&gt; <input value="ClickMe" style="font-size:100%;color:red" onclick="alert('Hi there: '+x.firstName+
+                                ' likes '+cars[1]);" type="button">
+</div>
+<br><br></div>
+
+<div id="outline-container-orgf50634d" class="outline-2 slide hidden">
+<h1><span>Javascript and Semicolons</span></h1>
+<div class="outline-text-2" id="text-orgf50634d">
+<p>
+Semicolons terminate statements BUT JavaScript doesn't require them.
+</p>
+</div>
+<div id="outline-container-org2053229" class="outline-3 incremental">
+<h3 id="org2053229">Semicolons are assumed at the end of a line</h3>
+<div class="outline-text-3" id="text-org2053229">
+<p>
+Usually this is correct, but can introduce ambiguity
+</p>
+<pre class="example">a = b + c
+(d + e).upper()
+
+// Is treated as:
+// a = b + c(d + e).foo();
+
+NOT THE SAME AS
+
+a = b + c;
+(d + e).upper()
+</pre>
+
+<p>
+It's an obscure point, but generally using semicolons is safer
+</p>
+
+<p>
+For details, SKIM <a href="http://inimino.org/~inimino/blog/javascript_semicolons" rel="external">http://inimino.org/~inimino/blog/javascript_semicolons</a><br>
+– "SKIM" - i.e. NOT required reading 
+</p>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-orgd07695b" class="outline-2 slide hidden">
+<h1><span>JavaScript Basics</span></h1>
+<div class="outline-text-2" id="text-orgd07695b">
+</div>
+<div id="outline-container-orgf02983f" class="outline-3 incremental">
+<h3 id="orgf02983f">Variables ::</h3>
+<div class="outline-text-3" id="text-orgf02983f">
+<ul class="org-ul">
+<li>start with a letter _ $</li>
+<li>followed by letter, digit, _ $</li>
+</ul>
+<ul class="org-ul">
+<li>JavaScript is <b>case-sensitive</b> - like Python</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge53036f" class="outline-3 incremental">
+<h3 id="orge53036f">$ is a valid variable name</h3>
+<div class="outline-text-3" id="text-orge53036f">
+<ul class="org-ul">
+<li>This is used in popular <i>jQuery</i> library</li>
+</ul>
+
+<p>
+e.g. $("p").hide() 
+</p>
+
+<p>
+Explore this next year in 159.352
+</p>
+</div>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-orge2edd3a" class="outline-2 slide hidden">
+<h1><span>Variable Declarations</span></h1>
+<div class="outline-text-2" id="text-orge2edd3a">
+<p>
+Variables 
+</p>
+<ul class="org-ul">
+<li>can be declared on first assignment:</li>
+<li>typing is dynamic</li>
+</ul>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript">x = 27;
+
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">y</span> = 39.7;
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">a</span>, <span style="color: #a0522d;">b</span>, <span style="color: #a0522d;">c</span>;
+
+<span style="color: #a020f0;">const</span> <span style="color: #a0522d;">q</span> = <span style="color: #8b2252;">"hello"</span>;
+</code></pre>
+</div>
+
+<ul class="org-ul">
+<li>Using <i>var</i> introduces a <i>local variable</i></li>
+<li>using <i>const</i> means value may not be altered</li>
+</ul>
+
+<p>
+<b>Variables declared without <i>var</i> are GLOBAL</b>
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org2f95edc" class="outline-2 slide hidden">
+<h1><span>Javascript comments</span></h1>
+<div class="outline-text-2" id="text-org2f95edc">
+<p>
+There are two sorts of comments in Javascript:
+</p>
+
+<pre class="example">//          - introduces a 'rest of the line' comment
+
+/* ... */   - a comment that can span many lines
+</pre>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #b22222;">/* </span><span style="color: #b22222;">Here's a function that displays the contents</span>
+<span style="color: #b22222;">   of the 'fontChanges' array </span>
+<span style="color: #b22222;">*/</span>
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">showChanges0</span>(){
+   <span style="color: #a020f0;">if</span> (fontChanges.length == 0) 
+     alert(<span style="color: #8b2252;">"No changes"</span>)    <span style="color: #b22222;">// </span><span style="color: #b22222;">Pop up a dialog box</span>
+   <span style="color: #a020f0;">else</span> {
+      s = <span style="color: #8b2252;">''</span>
+      <span style="color: #a020f0;">for</span> (i=0; i&lt;fontChanges.length; i++) {
+        s = s + fontChanges[i] + <span style="color: #8b2252;">'&lt;br&gt;'</span>
+      document.getElementById(<span style="color: #8b2252;">'changeList'</span>).innerHTML = s
+      }
+   }
+}
+</code></pre>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org397c118" class="outline-2 slide hidden">
+<h1><span>Javascript expressions and assignment</span></h1>
+<div class="outline-text-2" id="text-org397c118">
+<ul class="org-ul">
+<li>These work just like in Python and most other languages</li>
+</ul>
+</div>
+
+<div id="outline-container-orgce58679" class="outline-3 incremental">
+<h3 id="orgce58679">Operators</h3>
+<div class="outline-text-3" id="text-orgce58679">
+<div class="org-src-container">
+<pre><code class="src src-javascript">+   -   *   /   %   
+
+++  --    <span style="color: #b22222;">// </span><span style="color: #b22222;">AUTOINCREMENT/DECREMENT OPERATORS</span>
+
+y = x++     <span style="color: #b22222;">// </span><span style="color: #b22222;">set y = x, then increment x</span>
+y = x--     <span style="color: #b22222;">// </span><span style="color: #b22222;">set y = x, then decrement x</span>
+
+y = --x;    <span style="color: #b22222;">// </span><span style="color: #b22222;">decrement, then assign y = x</span>
+</code></pre>
+</div>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org3768835" class="outline-2 slide hidden">
+<h1><span>Relational Operators</span></h1>
+<div class="outline-text-2" id="text-org3768835">
+<p>
+For comparing things
+</p>
+<table rules="groups" frame="hsides" cellspacing="0" cellpadding="6" border="2">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Operator</td>
+<td class="org-left">Meaning</td>
+</tr>
+
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">equal value</td>
+</tr>
+
+<tr>
+<td class="org-left">!=</td>
+<td class="org-left">not equal value</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;</td>
+<td class="org-left">greater than</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;=</td>
+<td class="org-left">greater than or equal to</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;</td>
+<td class="org-left">less than</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;=</td>
+<td class="org-left">less than or equal to</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>=</code></td>
+<td class="org-left">identical (equal value and of same type)</td>
+</tr>
+
+<tr>
+<td class="org-left">!==</td>
+<td class="org-left">not identical</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-orgd1d4f43" class="outline-2 slide hidden">
+<h1><span>Logical (Boolean) Operators</span></h1>
+<div class="outline-text-2" id="text-orgd1d4f43">
+<p>
+Uses the 'C' Style for <b>and</b>, <b>or</b> and <b>not</b>
+</p>
+
+<ul class="org-ul">
+<li><b>&amp;&amp;</b> is AND</li>
+<li><b>||</b> is OR</li>
+<li><b>!</b> is NOT</li>
+</ul>
+
+<p>
+e.g.
+</p>
+<div class="org-src-container">
+<pre><code class="src src-python"><span style="color: #a020f0;">if</span>   x &gt; 9 <span style="color: #a020f0;">and</span> <span style="color: #a020f0;">not</span> (b == 7 <span style="color: #a020f0;">or</span> x == 0):  <span style="color: #b22222;"># </span><span style="color: #b22222;">in Python</span>
+</code></pre>
+</div>
+
+<p>
+becomes
+</p>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">if</span> (  x &gt; 9 &amp;&amp; !(b == 7 || x == 0)   )
+</code></pre>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org96346b8" class="outline-2 slide hidden">
+<h1><span>Ternary Operator</span></h1>
+<div class="outline-text-2" id="text-org96346b8">
+<p>
+This is like an if <b>expression</b>
+</p>
+
+<p>
+If contains a condition and two values:
+</p>
+
+<pre class="example">condition ? value if True : value if False
+
+</pre>
+
+<p>
+e.g.
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript">x = (reply == <span style="color: #8b2252;">"Hello"</span>) ? 99 : 0
+</code></pre>
+</div>
+
+<p>
+is the same as:
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">if</span> (reply == <span style="color: #8b2252;">"Hello"</span>) 
+   x = 99
+<span style="color: #a020f0;">else</span>
+   x = 0
+</code></pre>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org49c823b" class="outline-2 slide hidden">
+<h1><span>Javascript data types</span></h1>
+<div class="outline-text-2" id="text-org49c823b">
+<p>
+All the usual:
+</p>
+<table rules="groups" frame="hsides" cellspacing="0" cellpadding="6" border="2">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">TYPE</th>
+<th scope="col" class="org-left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>undefined</b></td>
+<td class="org-left">assigned to all unassigned variables</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>null</b></td>
+<td class="org-left">like Python's None</td>
+</tr>
+
+<tr>
+<td class="org-left">Number</td>
+<td class="org-left">Always Floats: includs NaN &amp; Infinity</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">Use either " or ' - can be indexed: e.g. s[0]</td>
+</tr>
+
+<tr>
+<td class="org-left">Boolean</td>
+<td class="org-left">true &amp; false (NOT True/False)</td>
+</tr>
+
+<tr>
+<td class="org-left">Symbol</td>
+<td class="org-left">– out of scope for 158.258</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br><br></div>
+
+<div id="outline-container-org49bf6b1" class="outline-2 slide hidden">
+<h1><span>Native Objects</span></h1>
+<div class="outline-text-2" id="text-org49bf6b1">
+<p>
+Various useful constructs are provided natively
+</p>
+
+<ul class="org-ul">
+<li><b>Array</b> (like a Python list)</li>
+<li><b>Date</b> - milliseconds since 1/1/1970 UTC</li>
+<li><b>Error</b> - like an Exception object</li>
+</ul>
+</div>
+<br><br></div>
+
+<div id="outline-container-org59566c6" class="outline-2 slide hidden">
+<h1><span>Arrays</span></h1>
+<div class="outline-text-2" id="text-org59566c6">
+<p>
+These are similar to Python Lists 
+</p>
+<ul class="org-ul">
+<li>operations are less comprehensive</li>
+<li><b>anArray.push(item)</b> is like Python's <i>append</i></li>
+<li><b>anArray.length</b> is like Python's <i>len(anArray)</i></li>
+<li>Deletion: delete x[2];</li>
+</ul>
+<div class="org-src-container">
+<pre><code class="src src-javascript">lines = Array();   <span style="color: #b22222;">// </span><span style="color: #b22222;">declare an array</span>
+
+lines.push(<span style="color: #8b2252;">'Hi'</span>)
+lines.push(27)
+
+OR
+
+lines = [<span style="color: #8b2252;">'Hi'</span>, 27]
+</code></pre>
+</div>
+
+<p>
+Zero based indexing works: e.g.  p = lines[0]
+</p>
+</div>
+<br><br></div>
+
+<div id="outline-container-org68abe1d" class="outline-2 slide hidden">
+<h1><span>Automatic Type Coercion (conversion)</span></h1>
+<div class="outline-text-2" id="text-org68abe1d">
+<p>
+Booleans
+In a condition:
+</p>
+<ul class="org-ul">
+<li>0, -0, null, NaN, undefined, and the empty string are <b>false</b></li>
+<li>complements of these are <b>true</b></li>
+</ul>
+
+<p>
+<b>Nan</b> - Not a Number!
+</p>
+
+<p>
+Auto numbers-to-string conversion
+</p>
+<pre class="example">x = "Cost of " + item + ' is ' + cost
+
+</pre>
+</div>
+<br><br></div>
+
+<div id="outline-container-org557566f" class="outline-2 slide hidden">
+<h1><span>Object Coercion</span></h1>
+<div class="outline-text-2" id="text-org557566f">
+<blockquote>
+<p>
+If an object is compared with a number or string, JavaScript attempts to return the default value for the object. 
+</p>
+
+<p>
+An object is converted to a primitive <b>String</b> or <b>Number</b> value, using the <b>.valueOf()</b> or <b>.toString()</b> methods of the object. 
+</p>
+
+<p>
+If this fails, a runtime error is generated.<br>
+– <a href="https://en.wikipedia.org/wiki/JavaScript_syntax#Boolean">https://en.wikipedia.org/wiki/JavaScript_syntax#Boolean</a>
+</p>
+</blockquote>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-org82f289e" class="outline-2 slide hidden">
+<h1><span>Functions</span></h1>
+<div class="outline-text-2" id="text-org82f289e">
+<p>
+The 'function' keyword is used to declare functions
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">mpy</span>(<span style="color: #a0522d;">a</span>, <span style="color: #a0522d;">b</span>) { 
+   <span style="color: #a020f0;">return</span> a * b;
+}  
+
+<span style="color: #a020f0;">var</span> <span style="color: #a0522d;">x</span> = mpy(4, 3);  <span style="color: #b22222;">// </span><span style="color: #b22222;">Function is called,</span>
+                    <span style="color: #b22222;">// </span><span style="color: #b22222;">return value will end up in x</span>
+
+</code></pre>
+</div>
+</div>
+
+<div id="outline-container-org4c6486d" class="outline-3 incremental">
+<h3 id="org4c6486d">Functions are first-class variables</h3>
+<div class="outline-text-3" id="text-org4c6486d">
+<ul class="org-ul">
+<li>they can be assigned to variables</li>
+<li>they can be added to objects</li>
+</ul>
+</div>
+</div>
+<br><br></div>
+
+<div id="outline-container-org6cd1125" class="outline-2 slide hidden">
+<h1><span>JavaScript <i>if-else</i> statement</span></h1>
+<div class="outline-text-2" id="text-org6cd1125">
+<pre class="example">if (condition) {
+   Code to be executed if the condition is true
+} 
+else {
+   Code to be executed if the condition is false
+}
+</pre>
+
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">if</span>  (hour &lt; 18) {
+   greeting = <span style="color: #8b2252;">"Good day"</span>;
+}   
+<span style="color: #a020f0;">else</span> {
+   greeting = <span style="color: #8b2252;">"Good evening"</span>;
+}
+</code></pre>
+</div>
+
+<p>
+<b>IMPORTANT:</b> - condition NEEDS to be bracketted
+</p>
+</div>
+<br><br></div>
+
+
+<div id="outline-container-orgfa95b00" class="outline-2 slide hidden">
+<h1><span>JavaScript <i>for</i> loop</span></h1>
+<div class="outline-text-2" id="text-orgfa95b00">
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">for</span> (initial-value setup; continuation-test; increment) {
+   statement-1;
+   statement-2;
+   statement-3;
+}
+</code></pre>
+</div>
+
+<p>
+Display values from 1 to 5:
+</p>
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">for</span> (x=1; x&lt;=5; x++) {
+   alert(<span style="color: #8b2252;">"X is "</span>+x)
+}
+</code></pre>
+</div>
+
+<script>
+function fordemo(){
+   for (x=1; x<=5; x++) {
+      alert("X is "+x);
+   }
+}
+</script>
+
+<input value="Run Loop" onclick="fordemo()" style="font-size:100%" type="button">
+</div>
+<br><br></div>
+
+
+<div id="outline-container-org88e21c9" class="outline-2 slide hidden">
+<h1><span>For loop Example</span></h1>
+<div class="outline-text-2" id="text-org88e21c9">
+<div class="org-src-container">
+<pre><code class="src src-javascript"><span style="color: #a020f0;">function</span> <span style="color: #0000ff;">showChanges0</span>(){
+   <span style="color: #a020f0;">if</span> (fontChanges.length == 0) 
+     alert(<span style="color: #8b2252;">"No changes"</span>)
+   <span style="color: #a020f0;">else</span> {
+      s = <span style="color: #8b2252;">''</span>
+      <span style="color: #a020f0;">for</span> (i=0; i&lt;fontChanges.length; i++) {
+        s = s + fontChanges[i] + <span style="color: #8b2252;">'&lt;br&gt;'</span>
+      document.getElementById(<span style="color: #8b2252;">'changeList'</span>).innerHTML = s
+      }
+   }
+}
+<span style="color: #b22222;">//</span><span style="color: #b22222;">-------------------------------------------------------</span>
+<span style="color: #b22222;">// </span><span style="color: #b22222;">The 'for-in' construct </span>
+<span style="color: #b22222;">// </span><span style="color: #b22222;">is NOT like Python when used with arrays (lists)</span>
+<span style="color: #b22222;">// </span><span style="color: #b22222;">but does produce object keys (like Python)</span>
+<span style="color: #b22222;">// </span><span style="color: #b22222;">Below, x is the index (0, 1, 2 ..) NOT the array value</span>
+<span style="color: #b22222;">//</span><span style="color: #b22222;">-------------------------------------------------------</span>
+<span style="color: #a020f0;">function</span> <span style="color: #0000ff;">showChanges</span>(){
+   <span style="color: #a020f0;">if</span> (fontChanges.length == 0) 
+     alert(<span style="color: #8b2252;">"No changes"</span>)
+   <span style="color: #a020f0;">else</span> {
+      s = <span style="color: #8b2252;">''</span>
+      <span style="color: #a020f0;">for</span> (x <span style="color: #a020f0;">in</span> fontChanges) {
+        s = s + x + <span style="color: #8b2252;">'--&lt;br&gt;'</span>
+      document.getElementById(<span style="color: #8b2252;">'changeList'</span>).innerHTML = s
+      }
+   }
+}
+</code></pre>
+</div>
+</div>
+<br><br></div>
+<div id="outline-container-org68603ed" class="outline-2 slide hidden">
+<h1><span>Google Maps demo</span></h1>
+<div class="outline-text-2" id="text-org68603ed">
+<div class="org-src-container">
+<pre><code class="src src-html">&lt;<span style="color: #a020f0;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #0000ff;">html</span>&gt;
+  &lt;<span style="color: #0000ff;">head</span>&gt;
+    <span style="color: #b22222;">&lt;!-- </span><span style="color: #b22222;">This stylesheet contains specific styles for displaying the map</span>
+<span style="color: #b22222;">         on this page. Replace it with your own styles as described in the</span>
+<span style="color: #b22222;">         documentation:</span>
+<span style="color: #b22222;">         https://developers.google.com/maps/documentation/javascript/tutorial </span><span style="color: #b22222;">--&gt;</span>
+    &lt;<span style="color: #0000ff;">link</span> <span style="color: #a0522d;">rel</span>=<span style="color: #8b2252;">"stylesheet"</span> <span style="color: #a0522d;">href</span>=<span style="color: #8b2252;">"/maps/documentation/javascript/demos/demos.css"</span>&gt;
+  &lt;/<span style="color: #0000ff;">head</span>&gt;
+  &lt;<span style="color: #0000ff;">body</span>&gt;
+    &lt;<span style="color: #0000ff;">div</span> <span style="color: #a0522d;">id</span>=<span style="color: #8b2252;">"map"</span>&gt;&lt;/<span style="color: #0000ff;">div</span>&gt;
+    &lt;<span style="color: #0000ff;">script</span>&gt;
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          //center: {lat: -34.397, lng: 150.644},
+                    center: {lat: -40.3563, lng: 175.611},
+          zoom: 9
+        });
+      }
+    &lt;/<span style="color: #0000ff;">script</span>&gt;
+    &lt;<span style="color: #0000ff;">script</span> <span style="color: #a0522d;">src</span>=<span style="color: #8b2252;">"https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY-HERE&amp;callback=initMap"</span>
+    async defer&gt;&lt;/<span style="color: #0000ff;">script</span>&gt;
+  &lt;/<span style="color: #0000ff;">body</span>&gt;
+&lt;/<span style="color: #0000ff;">html</span>&gt;
+</code></pre>
+</div>
+
+
+<div class="figure">
+<p><img src="1-javascript.html%23(1)_files/GoogleMap-from-JS.jfif" alt="GoogleMap-from-JS.jpg">
+</p>
+<p><span class="figure-number">Figure 3: </span>Map inserted by the above code</p>
+</div>
+</div>
+<br><br></div>
+</div>
+
+
+<div class="toolbar hidden" tabindex="0" style="display: block;"><div style="float: right; text-align: right"><span>slide 1/43</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><a href="http://www.w3.org/Talks/Tools/Slidy2/help/help.html" title="Navigate with mouse click, space bar, Cursor Left/Right, or Pg Up and Pg Dn. Use S and B to change font size.">help?</a> <a href="javascript:w3c_slidy.toggle_table_of_contents()" title="table of contents">contents?</a> </div></div></body></html>

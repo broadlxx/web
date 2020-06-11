@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			document.write("<h1>Tutorial8</h1>");  
+		</script>
+		<script src="new.js"></script>
+	</head>
+	<body>
+		<script></script>	
+		<button onclick="popup(100)">button1</button>
+		<button onclick="popup(200)">button2</button>	
+		
+		<input type="text"  id="reply" />
+		<button onclick="popup2()">reply</button>
+		
+		<input type="text"  id="fred" />
+		<button onclick="freds()">fred</button>
+		
+		<button onclick="number()">from 1 to 10</button>
+		<h2 id="output"></h2>
+		
+		<input type="text"  id="parseint" />
+		<button onclick="number2()">parseInt</button>
+		<h2 id="parseInt"></h2>
+		
+		<input type="text"  id="add" />
+		<button onclick="add()">add</button>
+		
+		<button onclick="show()">show all</button>
+		
+		<button onclick="clearall()">clear</button>
+		
+		<button onclick="delete_last()">delete last</button>
+		
+		<h3 id="show"></h3>
+		
+		<h4>Change Body Font</h4>
+
+		<input type=submit value='Body Font is Arial  ' onClick="setFont('Arial'  )"> <br>
+		<input type=submit value='Body Font is Georgia' onClick="setFont('Georgia')"> <br>
+		<input type=submit value='Body Font is Times  ' onClick="setFont('Times'  )"> <br>
+		<input type=submit value='Revert Body Font    ' onClick="revertFont()"      > <br>
+		<input type=submit value='Show Changes        ' onClick="showChanges()"     >
+		
+		<p><b>Changes</b></p>
+		<p id = 'changeList'> None yet </p>
+		
+		
+	</body>
+</html>

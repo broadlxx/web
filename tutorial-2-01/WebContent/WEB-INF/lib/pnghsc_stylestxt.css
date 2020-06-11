@@ -1,0 +1,157 @@
+/*
+   The Palmerston North Girls High School (PNGHS) Choir
+     
+   Author: 158.258
+   Date:   2019-09-03
+
+   Filename: pnghsc_lstyestxt.css
+   Supporting Files: 
+
+*/
+
+header, nav, section, aside, article, footer {
+   display: block;
+   font-style:oblique;
+}
+
+@font-face {
+   font-family: 'NobileRegular';
+   src: url('nobile-webfont.eot');
+}
+
+
+/* Body Layout */
+
+
+
+body {
+   width: 1000px;
+}
+
+/* Header Layout */
+
+header {
+	background-color:pink;
+	width: 100%;
+    height: 150px;
+}
+* {xoutline: 1px solid green}
+
+/* Navigation list */
+nav{
+	
+}
+
+nav.horizontal {
+	font-style:oblique;
+	font-family: NobileRegular,Verdana,Geneva,sans-serif;
+	font-weight:bold;
+	font-variant:small-caps;
+	font-size:20px;
+    width: 100%;
+    
+}
+
+nav.horizontal ul {
+	list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav.horizontal li {
+   background-color:#06edf9;
+   font-size:25px;
+   float: left;
+   list-style: none;
+   padding-top: 10px;
+   padding-bottom:10px;
+   margin: 0px;
+   width: 20%;
+   text-align: center;
+}
+
+nav.rollover {
+    display: block;
+    width: 400px;
+    height: 300px;
+    background: url
+}
+
+nav:first-letter{
+	font-size:25px;
+}
+
+nav.vertical {
+   background-color:yellow;
+   font-style:italic;
+   font-size:18px;
+   clear: left;
+   float: left;
+   width: 200px;
+}
+
+   
+
+/* Section styles */
+
+
+section {
+   background-color:rgba(165,165,165,0.3);
+   border-right: 1px solid black;
+   line-height:200%;
+   font-style:normal;
+   letter-spacing:2px;
+   float: left;
+   width: 39%;
+}
+section:first-line
+{
+	color:#ff0000;
+	font-size:30px;
+}
+
+
+/* Article styles */
+
+article img {
+   width: 150px;
+   float: right;
+   margin: 15px;
+}
+
+
+/* Aside styles */
+
+aside {
+   background-color:rgb(165,165,165);
+   letter-spacing:2px;
+   float: left;
+   margin-left: 15px;
+   width: 39%;
+}
+
+aside {
+   float: left;
+   margin-left: 15px;
+   width: 39%;
+   font-family: "Comic Sans Ms",cursive;
+   font-weight:bold;
+   font-size:1.3em;
+   line-height:1.6em;
+   overflow-x: 0.2em;
+   overflow-y: hidden;
+   white-space: nowrap;
+   scroll-snap-points-x: repeat(100%);
+   scroll-snap-type: mandatory;
+
+}
+
+/* Footer styles */
+
+footer {
+   clear: left;
+   border-top: 1px solid black;
+   animation: 10s wordsLoop linear infinite normal;
+}
+
+

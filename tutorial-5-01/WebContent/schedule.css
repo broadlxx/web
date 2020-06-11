@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+table.tab1 {
+   border: 10px soild #2cd3ad;
+   border-collapse: collapse;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0.85em;
+   width: 100%;
+}
+table.tab1 thead {
+   background-color: #2cd3ad;
+   color: white;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+table.tab1 th, table.tab1 td {
+   border: 1px solid gray;
+}
+table.tab1 tbody tr {
+	vertical-align: top;
+    height: 40px;
+}
+table.tab1 tbody tr.tr1 {
+	vertical-align: top;
+    height: 20px;
+}
+table.tab1 tbody td.h1 {
+	background-color:#ffff80;
+}
+aside p {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+     column-count: 2;
+
+    -moz-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+} 

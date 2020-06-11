@@ -1,0 +1,346 @@
+/* nullify slidy.css options */
+/* li li { font-size: 85%; font-style: plain } */
+
+.slide .cover .title {display : none; visibility: hidden;}    /* Suppress initial title page
+
+body {margin-left: 1em; 
+      font-family: arial, helvetica, sans
+     }
+
+ h1.title  {display : none; visibility: hidden;}    /* Suppress title, else it's on ALL pages */
+
+div.indent {margin-left:3em; margin-top:1em; margin-bottom:1em; }
+
+img {
+  margin-left: 1em; 
+  max-width  : 95%;
+  max-height : 95%;
+}
+
+/* figure number is what org-mode uses for figure captions */
+.figure { margin-left: 1em; font-size: 80%}
+
+div.lbox, div.lbox70 {
+  float: left;
+  height: 50%; 
+  width: 46%;
+  margin-top   : 1em;
+  margin-left  : 1em;
+  margin-bottom: 1em;
+
+  border-radius:  1em; 
+  border:1px solid silver;
+  background:#F0F0F0;
+  overflow  :auto;
+  text-align:left;
+  clear     :both;
+}
+
+div.rbox, div.rbox30 {
+  float: right;
+  height: 50%; 
+  width: 46%;
+  margin-top  : 1em;
+  margin-right:1em;
+  margin-bottom:1em;
+
+  border-radius   :  1em; 
+  border:1px solid silver;
+  background:#F0F0F0;
+  overflow:auto;
+  text-align:left;
+}
+
+/* Now override the widths for the assymetrically sized boxes */
+div.lbox70, div.col70 {
+  width : 65%;
+  float : left;
+}
+
+div.col30, div.rbox30 {
+  width : 25%;
+  float : right;
+}
+
+
+/* (initially) from Dave Raggett's W3 slides on htmlSlidy */
+
+div.vbox {
+  float: left;
+  height: 40%; 
+  width: 50%;
+  margin-top: 3em;
+}
+
+div.hbox {
+  width:70%;  
+  margin-top: 0;
+  margin-left:auto; 
+  margin-right:auto;
+  height: 60%;
+  border:1px solid silver;
+  background:#F0F0F0;
+  overflow:auto;
+  text-align:left;
+  clear:both;
+}
+/*--------------------------------*/
+
+.src {margin-bottom   : 1.5em;
+      margin-top      : 1em;
+      background-color: #FFD; 
+ }
+
+.quotation {font-style: italic; font-family: georgia, serif; margin-left:3em; margin-right:3em; color:#006;}
+.quote     {font-style: italic; font-family: georgia, serif; margin-left:3em; margin-right:3em; color:#006;}
+
+.verse     {font-style: italic; margin-left:3em; margin-right:3em; color:#006;}
+
+
+ul li   {margin-left: 1.25em; }
+
+ol li   {margin-left: 1.25em; }
+
+.example { background-color: #EEF; }
+
+.smaller  {font-size : 75%}
+.subtitle {font-size : 75%}
+
+table {margin-top:0.7em; margin-bottom: 1em;}
+
+body b { color: #0000B0; }
+
+.gap { margin-bottom:1em; }
+
+.vbox, .hbox, .box {
+    margin-left     : 2em; 
+    background-color: #FDD; 
+    border-width    : medium; 
+    border-style    : solid;  
+    border-radius   : 1em;  
+    line-height     : 1.3em; 
+} 
+
+.fixedbox pre {
+    background-color:  #FDD; 
+    border-radius   :  1em;  
+    line-height     : 1.3em; 
+} 
+
+.newTopic, .newtopic {
+    margin-left     : 1em;
+    margin-right    : 1em;  
+    background-color: #006; 
+    color           : white; 
+    border-width    : medium; 
+    border-style    : solid; 
+    border-radius   : 1em; 
+    margin-top      : 3em; 
+    font-size       : 200%; 
+    font-weight     : bold;
+    text-align      : center;  
+    line-height     : 1.3em;
+}
+ 
+
+.titlePage, .titlepage {
+    margin-top      : 2em;
+    margin-left     : 1em;
+    margin-right    : 1em;
+    margin-bottom   : 1em;
+    padding-top     : 1em;
+    padding-bottom  : 1em;
+    background-color:  #006;
+    color           : white;
+    border-width    : medium;
+    border-style    : solid;
+    border-radius   : 1em;
+    font-size       : 170%;
+    font-weight     : bold;
+    text-align      : center;  
+    line-height     : 1em;
+} 
+
+
+h3 {margin-top  : 1.5em; margin-bottom  : 0em;} 
+h4 {margin-top  : 1.5em; margin-bottom  : 0em;} 
+
+/* My classic dark red slide header */
+div.slide h1 {
+    font-size       : 170%;
+    margin-left     : -20px;
+    margin-right    : -55px;
+    padding-left    : 1em;
+    padding-top     : 0.2em;
+    padding-bottom  : 0.1em;
+    background      : #A00000;
+    color           : #FFF8F8;
+
+
+    padding-top     : 0.4em;
+    padding-bottom  : 0.2em;
+    color           : #A00000;
+    background      : #FFF;
+    border-bottom   : solid 1px rgb(250,240,240); 
+    /* border-top   :  solid 5px rgb(180,180,200); */
+   } 
+
+.shortquote  {
+    font-family     : serif;
+    margin-left     : 5em;
+    margin-right    : 5em;
+    font-style      : italic;
+    border-style    : solid;
+    border-color    : #BBBBBB;
+    padding-top     : 0em;
+    padding-bottom  : 0em;
+    border-radius   : 1em;
+}
+
+/*==========================================================================================
+                                PRINT FORMATTING
+  ==========================================================================================*/
+
+@media print { 
+  body {
+    background-color:#FFFFFF;
+    font-family: Times New Roman, Times, Liberation Serif, Serif;
+    font-size: 12pt;
+  }  
+
+  img {
+    max-width: 95%;      /* keep it on the page */
+  }
+
+  div.slide h1 {
+    padding : 3pt 3pt 3pt 3pt;
+    display: block;
+    font-size: 14pt;
+    line-height: 1.2em;
+    border-bottom   : solid 1px black;
+    color           : #800000;
+    background-color: #FFF;
+    page-break-after: avoid;
+    font-family     : Arial, Helvetica, Liberation Sans, Sans-serif;
+
+  }
+
+  .pre { 
+     font-size    : 10pt; 
+     margin-left  : 1em;                /* was 60% */
+     border-style : solid; 
+     border-width : 2px;
+     font-family: "Courier New", courier, monospace; 
+  }
+
+ .example {
+    font-size    : 10pt; 
+    margin-left  : 1em;
+    margin-right : 1em;
+    margin-bottom: 0.5em;
+    padding      : 0.5em;
+    border-style : solid; 
+    border-width : 1px;
+    page-break-before: auto;            /* was Always */
+    page-break-inside: avoid;
+  }
+
+ .src {
+    font-size    : 10pt;
+    padding      : 0.5em;
+    margin-left  : 1em;
+    margin-right : 1em;    
+    margin-bottom: 0.5em;
+    border-style : solid; 
+    border-width : 1px;
+    page-break-before: auto;            /* was Always */
+    page-break-inside: avoid;
+ }
+
+ div.slide, div.outline-2, div.outline-container-2 { 
+    font-size        : 14pt;    
+    page-break-inside: avoid;
+    page-break-after : avoid;           /* was Always */
+    background-color : #FFFFFF;  
+    margin-bottom    : 0em;             /* Bottom margin */
+    padding-top      : 0em;
+    margin-top       : 0em;
+  } 
+
+  /* :first-child isn't reliable for print media */
+  div.slide.first-slide { page-break-before: avoid; }
+
+/* Reinstate the if printing with Arial
+  p, ul, ol, blockquote, dl, li, td { font-size: 11pt; }
+*/
+
+  ol, ul {margin-top:0.2em; 
+         }
+
+  h2 { 
+       font-size     : 14pt; 
+       font-weight   : bold; 
+       color         : white; 
+       background-color:#444;
+       margin-top    : 0em;
+       padding-left  : 1em;
+       padding-top   : 1pt;
+       padding-bottom: 1pt;
+       padding-left  : 0.5em;
+       page-break-after : avoid;  
+     }
+
+  h3, h4 { 
+       font-size: 12pt; 
+       font-weight:bold; 
+       margin-top : 0.5em;
+       margin-bottom: 0em;
+       page-break-after : avoid; 
+  }
+
+  .newtopic, .newTopic {
+    background-color: white;
+    border-style: none;
+    margin-left:  0em;
+  }
+  .newtopic p, .newTopic p {
+    background-color: white;
+    color       : #008;
+    font-family : Arial, Helvetica, Liberation Sans, Sans-serif;
+    font-size   : 18pt;
+    margin-left : 0em;
+    margin-top  : 2em; 
+    padding-left: 0em;
+    text-align  : left;
+  }
+
+
+
+  .titlepage,  .titlePage {
+    width         : 90%;
+    margin-left   : 0em;
+    margin-right  : 0em;
+    padding-top   : 0em;
+    padding-bottom: 0em;
+    border-width  : medium;
+    border-style  : none;   /*solid; */
+    border-radius : 1em 1em 1em 1em;
+    font-weight   : bold;
+    text-align    : center;
+    line-height   : 1.2em;
+    background-color: #EEE;
+    font-size     : 24pt;
+    color         : black;
+  }
+
+
+  .titlePage p   {
+    font-size     : 20pt;
+  }   
+
+  .subtitle p {font-size: 14pt}
+
+ .gap, #preamble {display : none; visibility: hidden;}
+
+ div.slide { page-break-before: auto; }
+}
